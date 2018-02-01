@@ -28,6 +28,8 @@ with open(filename, 'r') as csvfile:
     reg = linear_model.LinearRegression()
     reg.fit(data,target)
     print("1 Here are coef: ", reg.coef_ )
+    predictions = reg.predict(data)
+    print("Mean squared error: %.2f" , mean_squared_error(target, predictions))
     #LinearRegression(copy_X=True, fit_intercept=True, n_jobs=1, normalize=False)
     #print("2 Here are coef: ", reg.coef_ )
     #reg.fit(data,target)
